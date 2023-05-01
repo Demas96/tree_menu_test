@@ -1,0 +1,22 @@
+{% if type == 0 %}
+    {% for m in menu %}
+        {% if m.parent is none %}
+            <a href="/?name={{ m.name }}" class="nav-link text-white">
+                  {{ m.name }}
+            </a>
+            {% for mp in menu %}
+                {% if mp.parent == m %}
+                    <a href="/?name={{ mp.name }}" class="nav-link text-white">
+                                  {{ mp.name }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% elif type == 1 %}
+    {% for m in menu %}
+        <a href="/?name={{ m.name }}" class="nav-link text-white">
+                      {{ m }}
+                </a>
+    {% endfor %}
+{% endif %}
