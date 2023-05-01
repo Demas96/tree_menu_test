@@ -16,7 +16,8 @@
 {% elif type == 1 %}
     {% for m in menu %}
         <a href="/?name={{ m.name }}" class="nav-link text-white">
-                      {{ m }}
+            <div style="margin-left: {{ m.level }}0px;">{{ m }}</div>
                 </a>
     {% endfor %}
 {% endif %}
+<br>

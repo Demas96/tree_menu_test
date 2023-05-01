@@ -13,7 +13,6 @@ def draw_menu(name: str):
     else:
         menu = Menu.objects.all().order_by('parent_id')
         cur_menu = menu.filter(name=name)[0]
-        print(menu)
         menu_new = []
         par = cur_menu
         try:
@@ -24,7 +23,6 @@ def draw_menu(name: str):
         check = False
         while True:
             for i in menu.filter(parent=par).order_by('serial_number'):
-                print(f'cur {cur_child} {ser}')
                 if i.serial_number > ser:
                     if i == cur_child.parent:
                         check = True
